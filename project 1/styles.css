@@ -1,0 +1,155 @@
+* {
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Georgia, 'Times New Roman', Times, serif,;
+    background-color: #000;
+}
+html {
+    scroll-behavior: smooth;
+}
+section {
+    padding: 80px 30px;
+    text-align: left;
+}
+
+
+.intro {
+    background-color: black;
+    color: white;
+    
+}
+
+.tupac {
+    background-color: black;
+    color: white;
+}
+
+.biggie {
+    background-color: black;
+    color: white;
+}
+
+.impact {
+    background-color: #000;
+    color: white;
+    
+}
+
+h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+    text-align: center;
+  
+}
+
+h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+p {
+    font-size: 18px;
+    max-width: 900px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+.heroimage {
+    height: 400px;
+    width: auto;
+}
+.heroimage2 {
+    height: 400px;
+    width: auto;
+    
+}
+.heroimage3 {
+    height: 400px;
+    width: auto;
+}
+.imagerow {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 30px auto;
+    max-width: 1000px;
+    align-items: center;
+}
+.tupacimage {
+    height: 400px;
+    width: auto;
+
+}
+.tupacimage2 {
+    height: 400px;
+    width: auto;
+  
+}
+
+.imagerow2 {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 30px auto;
+    align-items:center;
+    max-width: 1000px;
+}
+.bigimage {
+    height: 400px;
+    width: auto;
+}
+.big2 {
+    height: 400px;
+    width: auto;
+}
+.big3 {
+    height: 400px;
+    width: auto;
+}
+.imagerow3 {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 30px auto;
+    align-items:center;
+    max-width: 1000px;
+}
+
+li {
+    display: inline-block;
+    background-color: lightseagreen;
+    color: black;
+    padding: 10px;
+    margin: 15px;
+    text-transform: uppercase;
+    font-size: 15px;
+    text-align: center;
+}
+li a {
+    color: black;
+    text-decoration: none;
+}
+li a:hover {
+    color: navy;
+}
+nav {
+    text-align: center;
+}
+.imagerow4 {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 30px auto;
+    align-items:center;
+    max-width: 1000px;
+}
+.impactimage {
+    height: 600px;
+    width: auto;
+}
