@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>We Go Together</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #0a0a0a;
+            color: #f5f5f5;
+            font-family: 'Cormorant Garamond', Georgia, serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .lyric-line {
+            font-size: clamp(2rem, 8vw, 5rem);
+            font-weight: 400;
+            line-height: 1.4;
+            margin-bottom: 1rem;
+            cursor: default;
+        }
+
+        /* First line - words come together on hover */
+        .line-one {
+            display: flex;
+            justify-content: center;
+            gap: 0.5em;
+            flex-wrap: wrap;
+        }
+
+        .line-one .word {
+            transition: all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            display: inline-block;
+        }
+
+        .line-one:hover .word:nth-child(1) { transform: translateX(10px); }
+        .line-one:hover .word:nth-child(2) { transform: translateX(5px); }
+        .line-one:hover .word:nth-child(3) { transform: scale(1.1); color: #6495ED; }
+        .line-one:hover .word:nth-child(4) { transform: translateX(-5px); }
+
+        /* Bees and honey - special treatment */
+        .highlight-group {
+            display: inline-flex;
+            gap: 0.3em;
+            position: relative;
+        }
+
+        .bee, .honey {
+            transition: all 0.5s ease;
+            position: relative;
+        }
+
+        .bee::before, .honey::before {
+            content: '';
+            position: absolute;
+            top: -1.5em;
+            left: 50%;
+            width: 30px;
+            height: 30px;
+            background-image: url('bee.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            transform: translateX(-50%) scale(0);
+            transition: transform 0.3s ease;
+        }
+
+        .highlight-group:hover .bee {
+            transform: translateX(15px);
+            color: #6495ED;
+        }
+
+        .highlight-group:hover .honey {
+            transform: translateX(-15px);
+            color: #6495ED;
+        }
+
+        .highlight-group:hover .bee::before,
+        .highlight-group:hover .honey::before {
+            transform: translateX(-50%) scale(1);
+        }
+
+        .and-word {
+            transition: all 0.5s ease;
+        }
+
+        .highlight-group:hover .and-word {
+            opacity: 0;
+            transform: scale(0);
+        }
+
+        /* Second line - united animation */
+        .line-two {
+            opacity: 0.6;
+            transition: all 0.5s ease;
+            letter-spacing: 0.3em;
+        }
+
+        .line-two:hover {
+            opacity: 1;
+            letter-spacing: 0.05em;
+            color: #6495ED;
+        }
+
+        /* Artist credit */
+        .credit {
+            margin-top: 4rem;
+            font-size: 0.9rem;
+            font-style: italic;
+            opacity: 0.4;
+            letter-spacing: 0.2em;
+            text-transform: lowercase;
+            transition: opacity 0.3s ease;
+        }
+
+        .credit:hover {
+            opacity: 0.8;
+        }
+
+        /* Hint text */
+        .hint {
+            position: fixed;
+            bottom: 2rem;
+            font-size: 0.75rem;
+            opacity: 0.3;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.6; }
+        }
+
+        /* Floating decoration */
+        .decoration {
+            position: fixed;
+            width: 40px;
+            height: auto;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            pointer-events: none;
+        }
+
+        body:hover .decoration {
+            opacity: 0.6;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .decoration:nth-child(1) { top: 15%; left: 10%; animation-delay: 0s; }
+        .decoration:nth-child(2) { top: 25%; right: 15%; animation-delay: 1s; transform: scaleX(-1); }
+        .decoration:nth-child(3) { bottom: 30%; left: 20%; animation-delay: 2s; }
+        .decoration:nth-child(4) { bottom: 20%; right: 10%; animation-delay: 3s; transform: scaleX(-1); }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+    </style>
+</head>
+<body>
+    <img src="bee.png" class="decoration" alt="">
+    <img src="bee.png" class="decoration" alt="">
+    <img src="bee.png" class="decoration" alt="">
+    <img src="bee.png" class="decoration" alt="">
+
+    <div class="container">
+        <div class="lyric-line line-one">
+            <span class="word">we</span>
+            <span class="word">go</span>
+            <span class="word">together</span>
+            <span class="word">like</span>
+        </div>
+        
+        <div class="lyric-line">
+            <span class="highlight-group">
+                <span class="bee">bees</span>
+                <span class="and-word">and</span>
+                <span class="honey">honey</span>
+            </span>
+        </div>
+
+        <div class="lyric-line line-two">
+            we'll be united
+        </div>
+
+        <p class="credit">— The Intruders</p>
+    </div>
+
+    <p class="hint">hover to interact</p>
+</body>
+</html>
